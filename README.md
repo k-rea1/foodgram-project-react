@@ -1,12 +1,17 @@
 # praktikum_new_diplom
 
+Адрес проекта для проверки:
+
 http://62.84.127.39/
 
 
-admin:
+Администратор:
 superuser
 password: hello
 
-user:
+Пользователи:
 ark@nov.ru
 password: Hello771
+
+alex@vasilchuk.ru
+password: Hello777
