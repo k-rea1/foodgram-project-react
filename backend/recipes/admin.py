@@ -27,7 +27,7 @@ class RecipeAdmin(admin.ModelAdmin):
             obj_count=Count('favorite_recipe', distinct=True),
         )
     
-    favorite_count.short_description = "Кол-во добавлений в избранное"
+    favorite_count.short_description = "Количество добавлений в избранное"
 
 @admin.register(Ingredient)
 class IngredientAdmin(admin.ModelAdmin):

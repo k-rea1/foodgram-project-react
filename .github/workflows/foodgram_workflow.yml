@@ -38,6 +38,7 @@ jobs:
             cd ~/foodgram-project-react/infra/
             sudo docker-compose stop
             sudo docker-compose rm -f back
+            sudo docker image rm ${{ secrets.DOCKERHUB_USERNAME }}/foodgram_back:latest
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} > .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env
