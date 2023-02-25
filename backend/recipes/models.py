@@ -24,8 +24,9 @@ class Tag(models.Model):
     class Meta:
             verbose_name = 'Тег'
             verbose_name_plural = 'Теги'
-
-    
+            
+    def __str__(self):
+        return self.name
 
 class Ingredient(models.Model):
     name = models.CharField(max_length=256,
@@ -37,6 +38,9 @@ class Ingredient(models.Model):
     class Meta:
         verbose_name = 'Ингредиент'
         verbose_name_plural = 'Ингредиенты'
+        
+    def __str__(self):
+        return f'{self.name}, {self.measurement_unit}'
         
 class Recipe(models.Model):
     author = models.ForeignKey(
@@ -81,6 +85,8 @@ class Recipe(models.Model):
         verbose_name='Дата публикации'
     )
 
+    def __str__(self):
+        return self.name
 
     class Meta:
         verbose_name = 'Рецепт'

@@ -15,6 +15,7 @@ class RecipeAdmin(admin.ModelAdmin):
         'id', 'name', 'author', 'text', 'pub_date', 'favorite_count'
     )
     list_filter = ('name', 'author', 'tags')
+    search_fields = ('name',)
     empy_value_display = '---'
 
     def favorite_count(self, obj):
@@ -25,6 +26,8 @@ class RecipeAdmin(admin.ModelAdmin):
         return queryset.annotate(
             obj_count=Count('favorite_recipe', distinct=True),
         )
+    
+    favorite_count.short_description = "Кол-во добавлений в избранное"
 
 @admin.register(Ingredient)
 class IngredientAdmin(admin.ModelAdmin):
